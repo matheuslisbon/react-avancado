@@ -9,7 +9,6 @@ import { SectionTechProps } from 'types/api'
 import { getImageUrl } from 'utils/getImageUrl'
 
 const SectionTech = ({ title, techIcons }: SectionTechProps) => {
-  console.log(techIcons)
   return (
     <S.Wrapper>
       <Container>

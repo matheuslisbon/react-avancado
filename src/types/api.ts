@@ -53,6 +53,45 @@ export type SectionModulesProps = {
   title: string
   modules: Modules[]
 }
+export type SectionAgendaProps = {
+  title: string
+  description: string
+}
+type SocialLinks = {
+  title: string
+  Url: string
+}
+type Authors = {
+  photo: {
+    url: string
+    title: string
+  }
+  role: string
+  name: string
+  description: string
+  socialLinks: SocialLinks[]
+}
+export type SectionAboutUsProps = {
+  title: string
+  authors: Authors[]
+}
+export type Reviews = {
+  name: string
+  text: string
+  photo: LogoProps
+}
+export type SectionReviewsProps = {
+  title: string
+  reviews: Reviews[]
+}
+type Questions = {
+  answer: string
+  question: string
+}
+export type SectionFaqProps = {
+  title: string
+  questions: Questions[]
+}
 
 export type LandingPageProps = {
   logo: LogoProps
@@ -61,4 +100,8 @@ export type LandingPageProps = {
   sectionTech: SectionTechProps
   sectionConcepts: SectionConceptsProps
   sectionModules: SectionModulesProps
+  sectionAgenda: SectionAgendaProps
+  sectionAboutUs: SectionAboutUsProps
+  sectionReviews: SectionReviewsProps
+  sectionFaq: SectionFaqProps
 }

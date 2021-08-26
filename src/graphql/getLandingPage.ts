@@ -1,4 +1,5 @@
 const GET_LANDING_PAGE = `
+# Write your query or mutation here
 fragment logo on LandingPage {
   logo {
     alternativeText
@@ -60,7 +61,64 @@ fragment sectionModules on LandingPage {
     }
   }
 }
-
+fragment sectionAgenda on LandingPage {
+  sectionAgenda {
+    title
+    description
+  }
+}
+fragment pricingBox on LandingPage {
+  pricingBox {
+    benefits
+    totalPrice
+    numberInstallments
+    priceInstallment
+    button {
+      label
+      url
+    }
+  }
+}
+fragment sectionAboutUs on LandingPage {
+  sectionAboutUs {
+    authors {
+      photo {
+        url
+        alternativeText
+      }
+      socialLinks {
+        title
+        Url
+      }
+      role
+      name
+      description
+    }
+    title
+  }
+}
+fragment sectionReviews on LandingPage {
+  sectionReviews {
+    title
+    reviews {
+      name
+      text
+      photo {
+        alternativeText
+        url
+      }
+    }
+  }
+}
+fragment sectionFaq on LandingPage {
+  sectionFaq {
+    title
+    questions {
+      answer
+      question
+    }
+  }
+}
 query GET_LANDING_PAGE {
   landingPage {
     ...logo
@@ -69,6 +127,11 @@ query GET_LANDING_PAGE {
     ...sectionTech
     ...sectionConcepts
     ...sectionModules
+    ...sectionAgenda
+    ...pricingBox
+    ...sectionAboutUs
+    ...sectionReviews
+    ...sectionFaq
   }
 }
 
